@@ -10,29 +10,40 @@ namespace Academia76721.Domain.Repositories
 {
     public class DirectorCRUD : ICRUD<Director, int>
     {
+        private readonly IList<Director> _diretores = new List<Director>();
         public Director Delete(int id)
         {
-            throw new NotImplementedException();
+            _diretores.RemoveAt(id);
+            return null;
         }
 
-        public Director GetAll()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public Director GetOne(int id)
         {
-            throw new NotImplementedException();
+            var pesquisa = _diretores[id];
+
+            return pesquisa;
         }
 
         public Director Insert(Director item)
         {
-            throw new NotImplementedException();
+            var pesquisa = _diretores.First(z => z.Id == item.Id);
+            if (pesquisa == null)
+            {
+                _diretores.Add(item);
+            }
+            return pesquisa;
         }
 
         public Director Update(Director item)
         {
             throw new NotImplementedException();
+        }
+
+        IList<Director> ICRUD<Director, int>.GetAll()
+        {
+            return _diretores;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Academia76721.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -9,8 +10,13 @@ namespace Academia76721.Domain.Entities
 {
     public class Movie : BaseEntity<Guid>
     {
-        
+
         // Guid Id
+        public Movie()
+            {
+            this.Id = Guid.Empty;
+
+            }
         public string Name { get; set; }
 
         public string Description { get; set; }

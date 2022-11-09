@@ -21,7 +21,9 @@ namespace Academia76721.Domain.Repositories
 
         public Actor GetOne(int id)
         {
-            throw new NotImplementedException();
+            var pesquisa = _actores[id];
+
+            return pesquisa;
         }
 
         public Actor Insert(Actor item)
@@ -41,7 +43,11 @@ namespace Academia76721.Domain.Repositories
 
         IList<Actor> ICRUD<Actor, int>.GetAll()
         {
-            throw new NotImplementedException();
+            
+            
+                return _actores;
+          
+            
         }
     }
 }

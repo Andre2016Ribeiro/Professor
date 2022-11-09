@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Academia76721.Domain.Entities
 {
-    public class Director : BaseEntity<Guid>
+    public class Director : Person
     {
         public Director()
         {
-            this.Id = Guid.Empty;
+            this.Id = 0;
         }
-        public string Name { get; set; }
-
+        public string Description { get; set; }
+        public IList<Movie> Movies { get; set; }
     }
 }
