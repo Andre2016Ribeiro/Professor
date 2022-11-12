@@ -13,7 +13,7 @@ namespace Academia76721.Domain.Repositories
         private readonly IList<Movie> _movies = new List<Movie>();
         Movie ICRUD<Movie, Guid>.Delete(Guid id)
         {
-            _movies.RemoveAt(_movies.Equals(id));
+            _movies.RemoveAt(id);
             return null;
         }
 
